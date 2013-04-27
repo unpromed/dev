@@ -1,0 +1,62 @@
+<h2>Cadastro de Usuarios - Visualizar Cadastro</h2>
+    <fieldset>
+        <legend>Dados Pessoais</legend>
+         Data de Nascimento:
+         <input type="date" name="dt_nascimento" value="<?=$this->dados_usuario['dt_nascimento']?>" autocomplete ="off" readonly/>
+         Nome da Mãe:
+         <input type="tel" name="nom_mae" value="<?=$this->dados_usuario['nom_mae']?>" autocomplete ="off" readonly/>
+         RG:
+         <input type="email" name="num_rg" value="<?=$this->dados_usuario['num_rg']?>" autocomplete ="off" readonly/>
+          CPF:
+         <input type="text" name="num_cpf" value="<?=$this->dados_usuario['num_cpf']?>" autocomplete ="off" readonly/>
+    </fieldset> 
+    <fieldset>
+        <legend>Dados do usuario</legend>           
+        <dl>
+            <dt><label for='nom_usuaurio'>Nome do Usuario</label></dt>
+            <dd><input type="text" name="nom_usuario" value="<?=$this->dados_usuario['nom_usuario']?>" autocomplete ="off" readonly/></dd>
+            <dt><label for='desc_senha'>Senha</label></dt>
+            <dd><input type="password" name="desc_senha" value="<?=$this->dados_usuario['desc_senha']?>" autocomplete ="off" readonly/></dd>
+        </dl>
+        Status:
+         <select name="flg_status_usuario">
+                 <option value="default" selected>Selecione o Status do Usuario</option>
+                 <option value="1">Ativo</option>
+                 <option value="0">Inativo</option>
+             </select>      
+          Tipo Usuario:
+         <select name="flg_tipo_usuario">
+                 <option value="default" selected>Selecione o Tipo de usuario</option>
+                 <option value="A">Aluno</option>
+                 <option value="F">Funcionario</option>
+                 <option value="P">Professor</option>
+             </select>
+          Delega Poder:
+         <input type="text" name="delega_poder" value="<?=$this->dados_usuario['delega_poder']?>" autocomplete ="off" readonly/>      
+          Data de Validade da Senha:
+         <input type="date" name="dt_validade_senha" value="<?=$this->dados_usuario['dt_validade_senha']?>" autocomplete ="off" readonly/>
+          Data de Validade do Login:
+         <input type="date" name="dt_validade_login" value="<?=$this->dados_usuario['dt_validade_login']?>" autocomplete ="off" readonly/>
+    </fieldset>
+    <fieldset>
+           <legend>Dados Academicos</legend>
+           <table>
+               <tr>
+                   <td> Ra/Matricula:</td>
+                   <td><input type="text" name="num_ra_matricula" value="<?=$this->dados_usuario['num_ra_matricula']?>" autocomplete ="off" readonly/></td>
+                   <td>Campus</td>
+                   <td><input type="text" name="desc_campus" value="<?=$this->dados_usuario['desc_campus']?>" autocomplete ="off"readonly/>  </td>
+               </tr>
+           </table>               
+    </fieldset>
+    <fieldset>
+        <legend>Contato</legend>
+        Telefone:
+         <input type="text" name="num_telefone" value="<?=$this->dados_usuario['num_telefone']?>" autocomplete ="off" readonly/>
+         Celular:
+         <input type="text" name="num_celular" value="<?=$this->dados_usuario['num_celular']?>" autocomplete ="off" readonly/>
+         Email</td>
+         <input type="text" name="desc_email" value="<?=$this->dados_usuario['desc_email']?>" autocomplete ="off" readonly/>
+    </fieldset>
+<p class="text-center"> <a class="btn btn-primary" href="<?=$this->url(array("controller"=>"usuario","action"=>"edit","id"=>"{$this->dados_usuario['id_usuario']}"),null,true)?>">Editar</a></p>
+<p class="text-right"> <a class="btn btn-primary" href="<?=$this->url(array("controller"=>"usuario","action"=>"index"),null,true)?>">Voltar</a></p>

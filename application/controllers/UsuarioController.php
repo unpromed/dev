@@ -18,9 +18,7 @@ class UsuarioController extends Zend_Controller_Action
         $this->view->assign("dados_usuario",$dados_usuario);
     }
     
-    public function editAction(){
-        
-    }
+    
     
     /*public function newAction(){
         $request = $this->getRequest();
@@ -50,32 +48,24 @@ class UsuarioController extends Zend_Controller_Action
     }
     
     public function showAction(){
-        /*mostra os detalhes do Sim*/
-        $model = new Application_Model_Sim();
-        $sim = $model->find($this->_getParam('id'));
-        $this->view->assign('sim', $sim);
-        
-        $port = $this->_getParam('port');
-        $card = $this->_getParam('card');
-        
-        $where='card_add = "'.$card.'" AND port_num ="'.$port.'"';
-        $sms = new Application_Model_Sms();
-        $outgoing = $sms->count("outgoing",$where);
-        $incoming = $sms->count("incoming",$where);
-        $this->view->outgoing=$outgoing;
-        $this->view->incoming=$incoming;
-        
-        $where='card_add = "'.$card.'" AND port_num ="'. $port.'" AND result = "confirmation_val-0" OR result = "confirmation_val-112"' ;
-        
-        $ok = $sms->count("outgoing", $where);
-        $this->view->ok=$ok;
-        
-        /*
-         * if($result =='confirmation_val-0' OR $result =='confirmation_val-112'){
-         */
-        
-        
+       $model = new Application_Model_Usuario();
+       $dados_usuario = $model->find($this->_getParam('id'));
+       $this->view->assign("dados_usuario", $dados_usuario);
     }
+    
+    public function editAction()
+   {
+      $model = new Application_Model_Usuario();
+      $dados_usuario = $model->find($this->_getParam('id'));
+      $this->view->assign("dados_usuario", $dados_usuario);
+   }
+   
+   public function updateAction()
+   {
+      $model = new Application_Model_Usuario();
+      $model->alterarUsuario($this->_getAllParams());
+      $this->_redirect('usuario/index');
+   }
 
 
 }

@@ -1,0 +1,65 @@
+<h2>Cadastro de Usuarios - Editar Cadastro</h2>
+<form action="<?=$this->url(array("controller"=>"usuario","action"=>"update"),null,true)?>" method="post">
+   <input type="hidden" name="id_usuario" value="<?=$this->dados_usuario['id_usuario']?>" />    
+    <fieldset>
+        <legend>Dados Pessoais</legend>
+         Data de Nascimento:
+         <input type="date" name="dt_nascimento" value="<?=$this->dados_usuario['dt_nascimento']?>" autocomplete ="off"/>
+         Nome da Mãe:
+         <input type="tel" name="nom_mae" value="<?=$this->dados_usuario['nom_mae']?>" autocomplete ="off"/>
+         RG:
+         <input type="email" name="num_rg" value="<?=$this->dados_usuario['num_rg']?>" autocomplete ="off"/>
+          CPF:
+         <input type="text" name="num_cpf" value="<?=$this->dados_usuario['num_cpf']?>" autocomplete ="off"/>
+    </fieldset> 
+    <fieldset>
+        <legend>Dados do usuario</legend>           
+        <dl>
+            <dt><label for='nom_usuaurio'>Nome do Usuario</label></dt>
+            <dd><input type="text" name="nom_usuario" value="<?=$this->dados_usuario['nom_usuario']?>" autocomplete ="off"/></dd>
+            <dt><label for='desc_senha'>Senha</label></dt>
+            <dd><input type="password" name="desc_senha" value="<?=$this->dados_usuario['desc_senha']?>" autocomplete ="off"/></dd>
+        </dl>
+        Status:
+         <select name="flg_status_usuario">
+                 <option value="default" selected>Selecione o Status do Usuario</option>
+                 <option value="1">Ativo</option>
+                 <option value="0">Inativo</option>
+             </select>      
+          Tipo Usuario:
+         <select name="flg_tipo_usuario">
+                 <option value="default" selected>Selecione o Tipo de usuario</option>
+                 <option value="A">Aluno</option>
+                 <option value="F">Funcionario</option>
+                 <option value="P">Professor</option>
+             </select>
+          Delega Poder:
+         <input type="text" name="delega_poder" value="<?=$this->dados_usuario['delega_poder']?>" autocomplete ="off"/>      
+          Data de Validade da Senha:
+         <input type="date" name="dt_validade_senha" value="<?=$this->dados_usuario['dt_validade_senha']?>" autocomplete ="off"/>
+          Data de Validade do Login:
+         <input type="date" name="dt_validade_login" value="<?=$this->dados_usuario['dt_validade_login']?>" autocomplete ="off"/>
+    </fieldset>
+    <fieldset>
+           <legend>Dados Academicos</legend>
+           <table>
+               <tr>
+                   <td> Ra/Matricula:</td>
+                   <td><input type="text" name="num_ra_matricula" value="<?=$this->dados_usuario['num_ra_matricula']?>" autocomplete ="off"/></td>
+                   <td>Campus</td>
+                   <td><input type="text" name="desc_campus" value="<?=$this->dados_usuario['desc_campus']?>" autocomplete ="off"/>  </td>
+               </tr>
+           </table>               
+    </fieldset>
+    <fieldset>
+        <legend>Contato</legend>
+        Telefone:
+         <input type="text" name="num_telefone" value="<?=$this->dados_usuario['num_telefone']?>" autocomplete ="off"/>
+         Celular:
+         <input type="text" name="num_celular" value="<?=$this->dados_usuario['num_celular']?>" autocomplete ="off"/>
+         Email</td>
+         <input type="text" name="desc_email" value="<?=$this->dados_usuario['desc_email']?>" autocomplete ="off"/>
+    </fieldset>
+   <button type="submit" class="btn btn-primary">Enviar<i class="icon-ok"></i></button>
+</form>
+<p class="text-right"> <a class="btn btn-primary" href="<?=$this->url(array("controller"=>"usuario","action"=>"index"),null,true)?>">Voltar</a></p>

@@ -13,6 +13,10 @@
     </tr>
 </table>
 -->
+<form class="form-search">
+  <input type="text" class="input-medium search-query" value='A ser implementado'>
+  <button type="submit" class="btn">Pesquisar</button>
+</form>
 <p class="text-right"> <a class="btn btn-primary" href="<?=$this->url(array("controller"=>"usuario","action"=>"new"),null,true)?>">Cadastrar Usuario</a></p>
 <table class="table table-striped table-hover table-bordered table-condensed" width="100%" cellpadding="3" cellspacing="0" border="1">
    <tr>
@@ -39,8 +43,8 @@
         <td><center>Alterado por</center></td>
         <td><center><?=$usuario['dt_alteracao']?></center></td>
       <td><center>
-         <!-- <a href="<?=$this->url(array("controller"=>"usuario","action"=>"show","id"=>"{$usuasrio['id_usuario']}"),null,true)?>" title="Visualizar Cadastro"><i class='icon-eye-open'> </i></a> -->
-         <a href="<?=$this->url(array("controller"=>"usuario","action"=>"edit","id"=>"{$usuario['id_usuario']}",),null,true)?>" title="Editar Cadastro"><i class='icon-pencil'></i></a> 
+         <a href="<?=$this->url(array("controller"=>"usuario","action"=>"show","id"=>"{$usuario['id_usuario']}"),null,true)?>" title="Visualizar Cadastro"><i class='icon-eye-open'> </i></a>
+         <a href="<?=$this->url(array("controller"=>"usuario","action"=>"edit","id"=>"{$usuario['id_usuario']}"),null,true)?>" title="Editar Cadastro"><i class='icon-pencil'></i></a> 
          </center>
       </td>
    </tr>

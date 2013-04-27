@@ -94,6 +94,12 @@ class Application_Model_Usuario
         }
         return $dao->fetchAll($select)->toArray();
     }
+    
+    public function find($id){
+        $dao = new Application_Model_DbTable_Usuario();
+        $arr = $dao->find($id)->toArray();
+        return $arr[0];
+    }
 }
 
 ?>
