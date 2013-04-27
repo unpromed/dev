@@ -1,1 +1,70 @@
-<?php echo $this->layout()->content; ?>
+<?=$this->doctype('HTML5')?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=iso" />
+        <base href="http://<?=$_SERVER['HTTP_HOST'] . $this->baseUrl()?>/" />
+        <title>Unpromed</title>
+        <?= $this->headTitle() ?>
+        <?= $this->headLink()->appendStylesheet(Zend_Controller_Front::getInstance()->getBaseUrl().'/media/css/bootstrap.css')?>
+        <style>
+            /*.span2{
+                box-shadow: 10px 10px 5px #888888;
+                border-radius:15px;
+            }*/
+        </style>
+    </head>
+    
+<!-- HEADER -->    
+
+<div class="page-header">
+    <h1><img src = "<?=$this->baseUrl().'/media/img/logo_uninove.jpg'?>" width='20%' height='20%' alt = "Uninove" />
+        <small>Prontuario Digital</small></h1>
+    <!-- menu-->
+    <div class="navbar">
+        <div class="navbar-inner">
+            <a class="brand" href="#">Home</a>
+            <ul class="nav">
+            <li class="active"><a href="<?=$this->url(array("controller"=>"usuario","action"=>"index"),null,true)?>">UC003</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- menu -->
+</div>
+<!-- HEADER -->    
+
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span12">
+      <?php echo $this->layout()->content; ?>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<?php
+/*Menu antigo
+ * <ul class="nav nav-list">
+        <li class="nav-header">Menu</li>
+        <li class="divider"></li>
+        <li class=""><a href="<?=$this->url(array("controller"=>"sim","action"=>"index"),null,true)?>">Sim</a></li>
+            <ul class="nav nav-list">
+                <li><a href="<?=$this->url(array("controller"=>"sim","action"=>"new"),null,true)?>">Adicionar Sim</a></li>
+            </ul>
+        <li class="divider"></li>
+        <li><a href="<?=$this->url(array("controller"=>"group","action"=>"index"),null,true)?>">Grupo</a></li>  
+        <li class="divider"></li>
+        <li class=""><!-- <a href="<?=$this->url(array("controller"=>"sms","action"=>"index"),null,true)?>">-->Sms<!--</a>--></li>
+            <ul class="nav nav-list">
+                <li><a href="<?=$this->url(array("controller"=>"sms","action"=>"outgoing"),null,true)?>">Mostrar Sms's Saida</a></li>
+                <li><a href="<?=$this->url(array("controller"=>"sms","action"=>"incoming"),null,true)?>">Mostrar Sms's Entrada</a></li>
+            </ul>
+</ul>
+ * 
+ */
+?>        

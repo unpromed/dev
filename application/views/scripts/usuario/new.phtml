@@ -1,0 +1,84 @@
+<h2>Cadastro de Usuarios - Adicionar Cadastro</h2>
+<form action="<?=$this->url(array("controller"=>"usuario","action"=>"create"),null,true)?>" method="post">
+   <table class="table table-striped table-hover table-bordered table-condensed" width="100%" cellpadding="3" cellspacing="2">
+       <fieldset>
+       <tr>
+         <td>Nome do Usuario:</td>
+         <td><input type="text" name="nom_usuario" value="" autocomplete ="off"/></td>
+      </tr>
+      <tr>
+         <td>Ra/Matricula:</td>
+         <td><input type="text" name="num_ra_matricula" value="" autocomplete ="off"/></td>
+      </tr>
+      <tr>
+         <td>RG:</td>
+         <td><input type="email" name="num_rg" value="" autocomplete ="off"/></td>
+      </tr>
+      <tr>
+         <td>CPF:</td>
+         <td><input type="text" name="num_cpf" value="" autocomplete ="off"/></td>
+      </tr>
+      <tr>
+         <td>Telefone:</td>
+         <td><input type="text" name="num_telefone" value="" autocomplete ="off"/></td>
+      </tr>
+      <tr>
+         <td>Celular:</td>
+         <td><input type="text" name="num_celular" value="" autocomplete ="off"/></td>
+      </tr>
+      <tr>
+         <td>Data de Nascimento:</td>
+         <td><input type="date" name="dt_nascimento" value="" autocomplete ="off"/></td>
+      </tr>
+      <tr>
+         <td>Nome da Mãe:</td>
+         <td><input type="tel" name="nom_mae" value="" autocomplete ="off"/></td>
+      </tr>
+      <tr>
+         <td>Campus</td>
+         <td><input type="text" name="desc_campus" value="" autocomplete ="off"/></td>
+      </tr>
+      <tr>
+         <td>Email</td>
+         <td><input type="text" name="desc_email" value="" autocomplete ="off"/></td>
+      </tr>
+      <tr>
+         <td>Status:</td>
+         <td><select name="flg_status_usuario">
+                 <option value="default" selected>Selecione o Status do Usuario</option>
+                 <option value="1">Ativo</option>
+                 <option value="0">Inativo</option>
+             </select>
+         </td>
+      </tr>
+      <tr>
+         <td>Senha:</td>
+         <td><input type="password" name="desc_enha" value="" autocomplete ="off"/></td>
+      </tr>
+      <tr>
+         <td>Tipo Usuario:</td>
+         <td><select name="flg_tipo_usuario">
+                 <option value="default" selected>Selecione o Tipo de usuario</option>
+                 <option value="A">Aluno</option>
+                 <option value="F">Funcionario</option>
+                 <option value="P">Professor</option>
+             </select>
+         </td>
+      </tr>
+      <tr>
+         <td>Delega Poder:</td>
+         <td><input type="text" name="delega_poder" value="" autocomplete ="off"/></td>
+      </tr>
+      <tr>
+         <td>Data de Validade da Senha:</td>
+         <td><input type="date" name="dt_validade_senha" value="" autocomplete ="off"/></td>
+      </tr>
+      <tr>
+         <td>Data de Validade do Login:</td>
+         <td><input type="date" name="dt_validade_login" value="" autocomplete ="off"/></td>
+      </tr>
+       </fieldset>
+
+   </table>
+   <button type="submit" class="btn btn-primary">Enviar<i class="icon-ok"></i></button>
+</form>
